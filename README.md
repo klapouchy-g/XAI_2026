@@ -77,16 +77,16 @@ Project/                                          <- Root (Shagufta Shaheen/4XAI
 │
 ├── data/
 │   ├── raw/                                      <- Original .wav files (not tracked in Git)
-│   │   └── Actor\\\_01/ ... Actor\\\_24/               <- Download from Zenodo
+│   │   └── Actor\_01/ ... Actor\_24/               <- Download from Zenodo
 │   │
 │   └── processed/                                <- Preprocessed feature files
-│       ├── ravdess\\\_metadata.csv                  <- File paths and emotion labels (1440 rows)
-│       ├── ravdess\\\_mfcc\\\_features.csv             <- Original 40 mean MFCC features
-│       ├── ravdess\\\_mfcc\\\_features\\\_v2.csv          <- Extended 160 MFCC features
-│       ├── ravdess\\\_emotion\\\_labels\\\_encoded.npy    <- Numeric emotion labels (1440,)
-│       └── ravdess\\\_emotion\\\_classes.npy           <- Class name lookup array (8,)
+│       ├── ravdess\_metadata.csv                  <- File paths and emotion labels (1440 rows)
+│       ├── ravdess\_mfcc\_features.csv             <- Original 40 mean MFCC features
+│       ├── ravdess\_mfcc\_features\_v2.csv          <- Extended 160 MFCC features
+│       ├── ravdess\_emotion\_labels\_encoded.npy    <- Numeric emotion labels (1440,)
+│       └── ravdess\_emotion\_classes.npy           <- Class name lookup array (8,)
 │
-└── XAI\\\_2026/
+└── XAI\_2026/
     │
     ├── README.md                                 <- Project README (inside XAI folder)
     ├── pyproject.toml                            <- Python project config
@@ -98,12 +98,12 @@ Project/                                          <- Root (Shagufta Shaheen/4XAI
     │   │                                            Extracts labels, standardizes audio,
     │   │                                            saves 40 MFCC features + mel spectrograms
     │   │
-    │   ├── 01\\\_preprocessing\\\_v2.ipynb             <- Extended preprocessing (Shagufta)
-    │   │                                            Adds std, delta, delta\\\_std features
+    │   ├── 01\_preprocessing\_v2.ipynb             <- Extended preprocessing (Shagufta)
+    │   │                                            Adds std, delta, delta\_std features
     │   │                                            Expands MFCC from 40 to 160 features
-    │   │                                            Saves ravdess\\\_mfcc\\\_features\\\_v2.csv
+    │   │                                            Saves ravdess\_mfcc\_features\_v2.csv
     │   │
-    │   ├── 02\\\_classical\\\_ml\\\_shap.ipynb            <- Phase 1: XGBoost + SHAP (Shagufta)
+    │   ├── 02\_classical\_ml\_shap.ipynb            <- Phase 1: XGBoost + SHAP (Shagufta)
     │   │                                            Feature scaling and train/test split
     │   │                                            Random Forest and XGBoost training
     │   │                                            RandomizedSearchCV hyperparameter tuning
@@ -111,7 +111,7 @@ Project/                                          <- Root (Shagufta Shaheen/4XAI
     │   │                                            SHAP global, dot, per-emotion,
     │   │                                            waterfall and heatmap analysis
     │   │
-    │   ├── 03\\\_cnn\\\_gradcam.ipynb                  <- Phase 2: CNN+BiLSTM + Grad-CAM (Shagufta)
+    │   ├── 03\_cnn\_gradcam.ipynb                  <- Phase 2: CNN+BiLSTM + Grad-CAM (Shagufta)
     │   │                                            CNN+BiLSTM model training on MFCC sequences
     │   │                                            Enhanced early stopping
     │   │                                            Confusion matrix and classification report
@@ -119,7 +119,7 @@ Project/                                          <- Root (Shagufta Shaheen/4XAI
     │   │                                            Per-emotion Grad-CAM heatmaps
     │   │                                            Misclassification Grad-CAM analysis
     │   │
-    │   └── 04\\\_cnn\\\_bilstm\\\_gradcam\\\_comparison\\\_conclusion.ipynb
+    │   └── 04\_cnn\_bilstm\_gradcam\_comparison\_conclusion.ipynb
     │                                             <- Phase 3: Comparison + Conclusion (Shagufta)
     │                                                Performance comparison XGBoost vs CNN+BiLSTM
     │                                                Per-emotion F1 comparison
@@ -128,71 +128,60 @@ Project/                                          <- Root (Shagufta Shaheen/4XAI
     │                                                Final summary dashboard
     │
     ├── models/
-    │   ├── xgb\\\_final\\\_model.pkl                   <- Trained XGBoost model
+    │   ├── xgb\_final\_model.pkl                   <- Trained XGBoost model
     │   ├── scaler.pkl                            <- StandardScaler (must load with model)
-    │   ├── xgb\\\_best\\\_params.json                  <- Best hyperparameters from tuning
-    │   └── best\\\_cnn\\\_bilstm.pth                   <- Trained CNN+BiLSTM weights
+    │   ├── xgb\_best\_params.json                  <- Best hyperparameters from tuning
+    │   └── best\_cnn\_bilstm.pth                   <- Trained CNN+BiLSTM weights
     │
     ├── artifacts/
-    │   ├── X\\\_train\\\_scaled.npy                    <- Scaled training features (1152, 160)
-    │   ├── X\\\_test\\\_scaled.npy                     <- Scaled test features (288, 160)
-    │   ├── y\\\_train.npy                           <- Training labels (1152,)
-    │   ├── y\\\_test.npy                            <- Test labels (288,)
-    │   ├── y\\\_pred.npy                            <- XGBoost predictions (288,)
-    │   └── shap\\\_values.npy                       <- Computed SHAP values (288, 160, 8)
+    │   ├── X\_train\_scaled.npy                    <- Scaled training features (1152, 160)
+    │   ├── X\_test\_scaled.npy                     <- Scaled test features (288, 160)
+    │   ├── y\_train.npy                           <- Training labels (1152,)
+    │   ├── y\_test.npy                            <- Test labels (288,)
+    │   ├── y\_pred.npy                            <- XGBoost predictions (288,)
+    │   └── shap\_values.npy                       <- Computed SHAP values (288, 160, 8)
     │
     └── outputs/
-        ├── confusion\\\_matrix.png                  <- XGBoost confusion matrix
-        ├── per\\\_emotion\\\_f1.png                    <- XGBoost F1 per emotion
-        ├── shap\\\_global\\\_importance.png            <- SHAP global feature importance
-        ├── shap\\\_dot\\\_happy.png                    <- SHAP dot plot for happy emotion
-        ├── shap\\\_per\\\_emotion.png                  <- SHAP top 10 features per emotion
-        ├── shap\\\_waterfall\\\_misclassified.png      <- SHAP waterfall misclassification
-        ├── shap\\\_heatmap\\\_angry.png                <- SHAP heatmap for angry emotion
-        ├── cnnbilstm\\\_confusion\\\_matrix.png        <- CNN+BiLSTM confusion matrix
-        ├── cnn\\\_bilstm\\\_history.png                <- CNN+BiLSTM training curves
-        ├── gradcam\\\_per\\\_emotion.png               <- Grad-CAM heatmaps per emotion
-        ├── gradcam\\\_happy\\\_misclassified.png       <- Grad-CAM misclassification analysis
-        ├── shap\\\_vs\\\_gradcam\\\_comparison.png        <- SHAP vs Grad-CAM comparison
-        ├── final\\\_model\\\_comparison.png            <- Overall model performance comparison
-        ├── final\\\_per\\\_emotion\\\_comparison.png      <- Per emotion model comparison
-        ├── xai\\\_agreement\\\_table.png               <- XAI agreement summary table
-        ├── final\\\_summary\\\_dashboard.png           <- Complete project summary dashboard
-        └── final\\\_results.json                    <- All final metrics
+        ├── confusion\_matrix.png                  <- XGBoost confusion matrix
+        ├── per\_emotion\_f1.png                    <- XGBoost F1 per emotion
+        ├── shap\_global\_importance.png            <- SHAP global feature importance
+        ├── shap\_dot\_happy.png                    <- SHAP dot plot for happy emotion
+        ├── shap\_per\_emotion.png                  <- SHAP top 10 features per emotion
+        ├── shap\_waterfall\_misclassified.png      <- SHAP waterfall misclassification
+        ├── shap\_heatmap\_angry.png                <- SHAP heatmap for angry emotion
+        ├── cnnbilstm\_confusion\_matrix.png        <- CNN+BiLSTM confusion matrix
+        ├── cnn\_bilstm\_history.png                <- CNN+BiLSTM training curves
+        ├── gradcam\_per\_emotion.png               <- Grad-CAM heatmaps per emotion
+        ├── gradcam\_happy\_misclassified.png       <- Grad-CAM misclassification analysis
+        ├── shap\_vs\_gradcam\_comparison.png        <- SHAP vs Grad-CAM comparison
+        ├── final\_model\_comparison.png            <- Overall model performance comparison
+        ├── final\_per\_emotion\_comparison.png      <- Per emotion model comparison
+        ├── xai\_agreement\_table.png               <- XAI agreement summary table
+        ├── final\_summary\_dashboard.png           <- Complete project summary dashboard
+        └── final\_results.json                    <- All final metrics
 ```
 
 \---
 
 ## Workflow
 
-```
-RAVDESS Dataset (1440 audio files)
-        |
-PREPROCESSING
-(Preprocessing.ipynb + 01\\\_preprocessing\\\_v2.ipynb)
-        |
-     \\\_\\\_\\\_|\\\_\\\_\\\_
-    |       |
-  MFCC    Mel Spectrogram
-  (1440,  (1440, 128, 282, 1)
-   160)    not used in final models
-    |      due to insufficient data
- \\\_\\\_\\\_|\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_
-|                   |
-XGBoost         CNN + BiLSTM
-F1 = 0.63       F1 = 0.61
-(02\\\_classical   (03\\\_cnn\\\_gradcam
-\\\_ml\\\_shap)        .ipynb)
-|                   |
-SHAP            Grad-CAM
-|\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_\\\_|
-        |
-    COMPARISON
-(04\\\_cnn\\\_bilstm\\\_gradcam
-\\\_comparison\\\_conclusion)
-        |
-    CONCLUSION
-```
+|Stage|Description|Notebook|
+|-|-|-|
+|**1. Preprocessing**|Extract labels, standardize audio, extract MFCC (160 features) and Mel Spectrograms|Preprocessing.ipynb + 01\_preprocessing\_v2.ipynb|
+|**2. Classical ML**|Train XGBoost on 160 MFCC features, hyperparameter tuning, evaluation|02\_classical\_ml\_shap.ipynb|
+|**3. SHAP Analysis**|Global importance, per-emotion plots, waterfall, heatmap|02\_classical\_ml\_shap.ipynb|
+|**4. Deep Learning**|Train CNN + BiLSTM on MFCC sequences, evaluation|03\_cnn\_gradcam.ipynb|
+|**5. Grad-CAM Analysis**|Per-emotion heatmaps, misclassification analysis|03\_cnn\_gradcam.ipynb|
+|**6. Comparison**|SHAP vs Grad-CAM, model performance comparison|04\_cnn\_bilstm\_gradcam\_comparison\_conclusion.ipynb|
+|**7. Conclusion**|Key findings, limitations, future work|04\_cnn\_bilstm\_gradcam\_comparison\_conclusion.ipynb|
+
+### Summary
+
+* **MFCC features (160)** are used for both XGBoost and CNN + BiLSTM
+* **Mel Spectrograms** were extracted but not used in final models — 2D CNN was attempted but abandoned due to insufficient data (1440 samples)
+* **XGBoost F1 = 0.630** explained by SHAP
+* **CNN + BiLSTM F1 = 0.614** explained by Grad-CAM
+* **SHAP and Grad-CAM agree on 5 out of 6 key findings (83%)**
 
 \---
 
@@ -207,17 +196,17 @@ Extract to:
 
 ```
 Project/data/raw/
-    Actor\\\_01/
-    Actor\\\_02/
+    Actor\_01/
+    Actor\_02/
     ...
-    Actor\\\_24/
+    Actor\_24/
 ```
 
 ### Step 2 — Run Preprocessing
 
 ```
-Run: XAI\\\_2026/notebooks/Preprocessing.ipynb
-Run: XAI\\\_2026/notebooks/01\\\_preprocessing\\\_v2.ipynb
+Run: XAI\_2026/notebooks/Preprocessing.ipynb
+Run: XAI\_2026/notebooks/01\_preprocessing\_v2.ipynb
 ```
 
 This generates all files in `data/processed/`
@@ -225,28 +214,28 @@ This generates all files in `data/processed/`
 ### Step 3 — Run Phase 1 (XGBoost + SHAP)
 
 ```
-Run: XAI\\\_2026/notebooks/02\\\_classical\\\_ml\\\_shap.ipynb
+Run: XAI\_2026/notebooks/02\_classical\_ml\_shap.ipynb
 ```
 
-Saves models to `XAI\\\_2026/models/`
-Saves plots to `XAI\\\_2026/outputs/`
+Saves models to `XAI\_2026/models/`
+Saves plots to `XAI\_2026/outputs/`
 
 ### Step 4 — Run Phase 2 (CNN+BiLSTM + Grad-CAM)
 
 ```
-Run: XAI\\\_2026/notebooks/03\\\_cnn\\\_gradcam.ipynb
+Run: XAI\_2026/notebooks/03\_cnn\_gradcam.ipynb
 ```
 
-Saves model to `XAI\\\_2026/models/`
-Saves plots to `XAI\\\_2026/outputs/`
+Saves model to `XAI\_2026/models/`
+Saves plots to `XAI\_2026/outputs/`
 
 ### Step 5 — Run Phase 3 (Comparison + Conclusion)
 
 ```
-Run: XAI\\\_2026/notebooks/04\\\_cnn\\\_bilstm\\\_gradcam\\\_comparison\\\_conclusion.ipynb
+Run: XAI\_2026/notebooks/04\_cnn\_bilstm\_gradcam\_comparison\_conclusion.ipynb
 ```
 
-Saves all comparison plots to `XAI\\\_2026/outputs/`
+Saves all comparison plots to `XAI\_2026/outputs/`
 
 \---
 
@@ -318,7 +307,5 @@ pip install torch scikit-learn xgboost shap librosa joblib matplotlib seaborn ju
 
 ## Notes on File Availability
 
-The raw `.wav` files are not tracked in Git. The mel spectrogram file `ravdess\\\_mel\\\_spectrograms.npy` (\~207 MB) is available on the shared project drive and is not tracked in Git due to file size. All other processed files in `data/processed/` can be regenerated by running the preprocessing notebooks on the raw dataset.
-
-
+The raw `.wav` files are not tracked in Git. The mel spectrogram file `ravdess\_mel\_spectrograms.npy` (\~207 MB) is available on the shared project drive and is not tracked in Git due to file size. All other processed files in `data/processed/` can be regenerated by running the preprocessing notebooks on the raw dataset.
 
