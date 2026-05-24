@@ -1,0 +1,39 @@
+{
+    "XGBoost": {
+        "accuracy": 0.632,
+        "weighted_f1": 0.63,
+        "per_emotion_f1": {
+            "angry": 0.64,
+            "calm": 0.61,
+            "disgust": 0.67,
+            "fear": 0.7,
+            "happy": 0.54,
+            "neutral": 0.56,
+            "sad": 0.61,
+            "surprise": 0.69
+        },
+        "xai_method": "SHAP"
+    },
+    "CNN_BiLSTM": {
+        "accuracy": 0.62,
+        "weighted_f1": 0.614,
+        "per_emotion_f1": {
+            "angry": 0.58,
+            "calm": 0.69,
+            "disgust": 0.65,
+            "fear": 0.72,
+            "happy": 0.47,
+            "neutral": 0.47,
+            "sad": 0.52,
+            "surprise": 0.72
+        },
+        "xai_method": "Grad-CAM"
+    },
+    "xai_agreement": {
+        "total_findings": 6,
+        "agreements": 5,
+        "disagreements": 1,
+        "agreement_rate": "83.3%"
+    },
+    "key_finding": "MFCC 8 identified as critical for happy/fear confusion by both SHAP and Grad-CAM independently"
+}
