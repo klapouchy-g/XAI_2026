@@ -1,11 +1,11 @@
 # XAI\_2026 — Speech Emotion Recognition with Explainable AI
 
-## Team Members
+## Team Members & Responsibilities
 
 |Name|Student ID|
 |-|-|
-|Kacper Geisshirt|443171|
-|Shagufta Shaheen|477654|
+|Kacper Geisshirt|443171| - virtual enviroment, data preprocessing
+|Shagufta Shaheen|477654| - modelling
 
 \---
 
