@@ -2,10 +2,10 @@
 
 ## Team Members & Responsibilities
 
-|Name|Student ID|
-|-|-|
-|Kacper Geisshirt|443171| - virtual enviroment, data preprocessing
-|Shagufta Shaheen|477654| - modelling
+|Name|Student ID|Responsibilities|
+|-|-|-|
+|Kacper Geisshirt|443171| virtual enviroment, data preprocessing |
+|Shagufta Shaheen|477654| modelling |
 
 \---
 
