@@ -22,7 +22,7 @@ Imagine that instead of waiting for customers to fill out a survey, an AI system
 
 This idea is the inspiration behind our project.
 
-In this project, we build a **Speech Emotion Recognition (SER)** system that predicts the emotional state of a speaker using only audio signals. The model does not rely on the meaning of the words being spoken. Instead, it learns from characteristics of the voice such as tone, frequency patterns, and acoustic features to determine whether the speaker sounds happy, angry, sad, fearful, surprised, or neutral.
+In this project, we build a **Speech Emotion Recognition ** system that predicts the emotional state of a speaker using only audio signals. The model does not rely on the meaning of the words being spoken. Instead, it learns from characteristics of the voice such as tone, frequency patterns, and acoustic features to determine whether the speaker sounds happy, angry, sad, fearful, surprised, or neutral.
 
 However, making accurate predictions is only part of the challenge. We also want to understand **why** the model reaches a particular conclusion. 
 
@@ -30,7 +30,7 @@ To achieve this, we integrate **Explainable AI (XAI)** techniques such as **SHAP
 \---
 ## Overview
 
-This project builds a Speech Emotion Recognition (SER) system that takes short voice clips from the RAVDESS dataset and predicts the speaker's emotion using audio features. The project goes beyond standard model training by applying Explainable AI (XAI) methods to interpret and validate model decisions.
+This project builds a Speech Emotion Recognition system that takes short voice clips from the RAVDESS dataset and predicts the speaker's emotion using audio features. The project uses Explainable AI methods to interpret and validate model decisions.
 
 Two models are trained and explained:
 
