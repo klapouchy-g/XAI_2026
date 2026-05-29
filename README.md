@@ -9,6 +9,25 @@
 
 \---
 
+##  Project Motivation
+
+Think about what happens after you finish a call with customer support. Almost immediately, you receive a feedback form asking questions such as:
+* *"How was your experience?"*
+* *"Was the representative helpful?"*
+* *"Would you rate the service positively?"*
+
+**But what if this feedback could be predicted automatically?**
+
+Imagine that instead of waiting for customers to fill out a survey, an AI system could estimate their satisfaction simply by analyzing the way they speak during the last few moments of the conversation. The tone of their voice, changes in pitch, speaking pace, and emotional cues often reveal much more than words alone.
+
+This idea is the inspiration behind our project.
+
+In this project, we build a **Speech Emotion Recognition (SER)** system that predicts the emotional state of a speaker using only audio signals. The model does not rely on the meaning of the words being spoken. Instead, it learns from characteristics of the voice such as tone, frequency patterns, and acoustic features to determine whether the speaker sounds happy, angry, sad, fearful, surprised, or neutral.
+
+However, making accurate predictions is only part of the challenge. We also want to understand **why** the model reaches a particular conclusion. 
+
+To achieve this, we integrate **Explainable AI (XAI)** techniques such as **SHAP** and **Grad-CAM**. These methods allow us to visualize which parts of the audio signal influenced the prediction the most, making the decision-making process more transparent and trustworthy. Our goal is not just to build a model that can recognize emotions, but to build one whose decisions can be understood, verified, and trusted.
+\---
 ## Overview
 
 This project builds a Speech Emotion Recognition (SER) system that takes short voice clips from the RAVDESS dataset and predicts the speaker's emotion using audio features. The project goes beyond standard model training by applying Explainable AI (XAI) methods to interpret and validate model decisions.
