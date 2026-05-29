@@ -315,6 +315,16 @@ pip install torch scikit-learn xgboost shap librosa joblib matplotlib seaborn ju
 
 \---
 
+## Use Cases
+
+While automated customer satisfaction is our core inspiration, building a transparent and explainable Speech Emotion Recognition system has many applications across several industries:
+
+* **Healthcare & Teletherapy:** Assisting clinicians by objectively tracking a patient's emotional state over time during remote sessions. XAI ensures therapists can see exactly which acoustic changes (e.g., pitch shifts or tremors) triggered a diagnostic indicator.
+* **Automotive Safety:** Integrating into smart vehicle assistants to detect driver stress, road rage, or extreme fatigue. Because the system is explainable, automotive safety boards can verify that the AI is triggering alerts based on genuine distress rather than background cabin noise.
+* **AI Ethics & Academic Research:** Serving as a benchmark for how traditional machine learning (XGBoost) and deep learning (CNNs) "perceive" human voice characteristics. This helps researchers build less biased, more auditable audio processing models.
+
+---
+
 ## Limitations
 
 * Dataset size of 1440 samples limits deep learning potential
