@@ -341,3 +341,16 @@ The raw `.wav` files are not tracked in Git. The mel spectrogram file `ravdess\_
 
 https://drive.google.com/drive/folders/1lU-FfvX7Fv0ldasEfXXTSrSOHLNDsZR0?usp=drive_link
 
+
+---
+
+##  Declaration of AI Tool Usage
+
+In alignment with academic integrity guidelines, we acknowledge the use of AI assistants (Gemini) during the development of this project. AI tools were used for the following tasks:
+
+* **Code Debugging:** Helping us understand and fix error messages when our Python code crashed during model training.
+* **Documentation & Formatting:** Helping structure and format the Markdown (`.md`)  file for better readability.
+
+The core research question, dataset analysis, machine learning architecture, and final evaluation were entirely executed, and verified by the team members.
+
+
