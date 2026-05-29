@@ -103,7 +103,7 @@ Project/                                          <- Root (Shagufta Shaheen/4XAI
     │   │                                            Expands MFCC from 40 to 160 features
     │   │                                            Saves ravdess\_mfcc\_features\_v2.csv
     │   │
-    │   ├── 02\_classical\_ml\_shap.ipynb            <- Phase 1: XGBoost + SHAP (Shagufta)
+    │   ├── 02\_classical\_ml\_shap.ipynb            <- Phase 1: XGBoost + SHAP (Kacper)
     │   │                                            Feature scaling and train/test split
     │   │                                            Random Forest and XGBoost training
     │   │                                            RandomizedSearchCV hyperparameter tuning
